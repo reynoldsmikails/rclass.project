@@ -1,0 +1,26 @@
+---
+title: "R Class Project Proposal"
+author: "Mikaila Reynolds"
+date: "`r Sys.Date()`"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+## Geospatial Data Analysis
+I have been uploading shapefiles (.shp), which are ArcGIS files and contain spatial data, to R and plotting them on a map. We could also use a data set with addresses or coordinates and create geosaptial data in R and plot them. Another idea is for us to use rasters, which is also a type of geospatial data, but is tiles imagery rather than points/lines/polygons. An example of this is aerial imagery, land use, and elevation data.  
+
+## Abstract
+One of my projects with Dr. Dumas involves examining if property sale prices over time have any correlation to changes in water quality. This dataset is the readings from over 400 water quality stations throughout North Carolina. The property value file, which is over half a million rows, is not yet ready to be utilized, but may eventually be examined as part of this project. Regardless, the water quality station readings are cleaned and ready to be utilized. My hope with this project isn't necessarily creating specific figures for a report, but rather creating figures and other data visualizations with this data to practice with.
+
+## Goals
+1. Create tables and figures of water quality data for coastal areas (within maybe two miles of the ocean front (I have an oceanfront geospatial data file to use for this))
+2. Plot water quality over time, between counties, fresh vs. brackish vs. salt water areas 
+3. Find trends between population centers and water quality 
+
+```{r}
+WQSdata<- read.csv("WaterQualityDataCombinedCleaned.csv")
+head(WQSdata)
+```
+
