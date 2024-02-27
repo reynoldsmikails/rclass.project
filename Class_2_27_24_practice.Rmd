@@ -1,0 +1,67 @@
+---
+title: "myproject.practice"
+author: "Mikaila Reynolds"
+date: '`r Sys.Date()`'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+water.data2<-read.csv("D:/R_Class/RScripts/rclass.project/WaterQualityDataCombinedCleaned.csv")
+head(water.data2)
+
+WQScords<-read.csv("D:/R_Class/RScripts/rclass.project/WQSCoordinates.csv")
+head(WQScords)
+
+cleanedCords<-WQScords[c(1:3)]
+pacman::p_load(dplyr)
+#temp<-WQScords%>%select(AreaSite,Latitude,Longitude)
+
+str(cleanedCords)
+"D:\R_Class\RScripts\rclass.project\WQSCoordinates.csv"
+
+colnames(water.data2)
+#want to update water.data2 with gps coords from WQScords
+WQScords<-cleanedCords
+
+#base R
+mergedWQSdata <- merge(x=water.data2, y=WQScords, by.x=intersect(water.data2$AreaSite), by.y=intersect(WQScords$AreaSite)) #need to update
+
+water.data2 <-left_join(x=water.data2, y=WQScords, by = join_by("AreaSite" == "AreaSite"))
+                         
+water.data2$Latitude<as.numeric(water.data2$Latitude)
+water.data2$Longitude<as.numeric(water.data2$Longitude)
+
+
+pacman::p_load(terra)
+pacman::p_load(leaflet)
+
+plotWQSpoints<-vect(cbind(water.data2$Latitude, water.data2$Longitude), crs="WGS84")
+
+plotWQSpoints
+
+
+plotWQS <- plet(plotWQSpoints)
+
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.

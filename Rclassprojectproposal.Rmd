@@ -22,5 +22,9 @@ One of my projects with Dr. Dumas involves examining if property sale prices ove
 ```{r}
 WQSdata<- read.csv("WaterQualityDataCombinedCleaned.csv")
 head(WQSdata)
+WQSlocations<-read.csv("WQSCoordinates.csv")
+head(WQSlocations)
+
+water.data<-file.choose()
 ```
 
