@@ -3,6 +3,7 @@ water.data2<-read.csv("D:/R_Class/RScripts/rclass.project/WaterQualityDataCombin
 head(water.data2)
 # one more unnecessary edit
 
+#add more things in!
 WQScords<-read.csv("D:/R_Class/RScripts/rclass.project/WQSCoordinates.csv")
 head(WQScords)
 
