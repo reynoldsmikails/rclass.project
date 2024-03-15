@@ -1,6 +1,5 @@
-X2<-read.csv("D:/R_Class/RScripts/rclass.project/WaterQualityDataCombinedCleaned.csv")
+water.data2<-read.csv("D:/R_Class/RScripts/rclass.project/WaterQualityDataCombinedCleaned.csv")
 head(water.data2)
-
 
 WQScords<-read.csv("D:/R_Class/RScripts/rclass.project/WQSCoordinates.csv")
 head(WQScords)
@@ -40,3 +39,5 @@ head(water.data2)
 
 # Hello world!
 # hi this is T-dog
+
+#This is jessie's branch just testing 
