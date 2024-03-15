@@ -1,4 +1,4 @@
-water.data2<-read.csv("D:/R_Class/RScripts/rclass.project/WaterQualityDataCombinedCleaned.csv")
+X2<-read.csv("D:/R_Class/RScripts/rclass.project/WaterQualityDataCombinedCleaned.csv")
 head(water.data2)
 
 
@@ -37,6 +37,6 @@ plotWQS
 plot(water.data2,"County", col=rainbow(25))
 head(water.data2)
 
+
 # Hello world!
 # hi this is T-dog
-
